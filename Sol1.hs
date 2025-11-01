@@ -3,6 +3,9 @@ import Prelude hiding (succ, pred, add,exp)
 
 
 --task 1 
+--Да се дефинират функции, които пресмятат периметъра и лицето на триъгълник в 
+--равнината по подадени негови дължини на три страни.
+
 trianglePerimeter :: Double -> Double -> Double -> Double
 trianglePerimeter x y z = x + y + z
 
@@ -19,6 +22,9 @@ triangleArea x y z = sqrt ( halfper * (halfper - x) * (halfper - y) * (halfper -
 -- 1.984313483298443
 
 --task 2
+-- Да се дефинират същите функции от Задача 01, които работят върху три точки в 
+-- равнината вместо дължини на страни.
+
 type Point = (Double, Double)
 sideLen :: Point -> Point -> Double
 sideLen x y = sqrt ((fst x- fst y)^2 + (snd x - snd y)^2)
@@ -43,6 +49,10 @@ triangleArea' x y z = triangleArea a b c
 
 
 --task3
+--Да се дефинира функция, която приема като единствен параметър данните на студент 
+--от ФМИ - име, факултетен номер, специалност и курс, и връща форматиран низ с 
+--информацията на студента.
+
 printStudent :: (String, String, String, Int) -> String
 printStudent (name, fn, major, year) = 
     "This is "++ name 
@@ -54,6 +64,13 @@ printStudent (name, fn, major, year) =
 -- "This is imbadwithnames with a faculty number of 99999 who is in year 3 of Computer Science"
 
 --task 4
+-- --Да се дефинира функцията succ, която приема естествено число и връща естественото 
+-- число, получено чрез прибавяне на единица. Без да използвате други функции освен 
+-- указаната, дефинирайте следните функции:
+--pred - за естествено число n връща n-1. Ако n==0, връща 0;
+--add - прибавя две естествени числа;
+--mult - умножава две естествени числа;
+--exp - повдига първия си аргумент на степен втория си аргумент.
 
 succ :: Int  -> Int
 succ  x = x + 1
@@ -95,12 +112,19 @@ exp x y
 -- >>> exp 2 12
 -- ProgressCancelledException
 
+--task 5
+--Да се дефинира функция, която намира сбора от цифрите на произволно цяло число.
+
 digitSum :: Int -> Int
 digitSum 0 = 0
 digitSum n = digitSum (div n 10) + mod n 10
 
 -- >>> digitSum 12345
 -- 15
+
+--task 6
+-- Да се дефинира функция, която намира сбора на естествените числа в интервала, 
+-- определен от двата параметъра.
 
 intervalSum :: Int -> Int -> Int
 intervalSum x y
@@ -110,6 +134,9 @@ intervalSum x y
 -- >>> intervalSum (-1) 16
 -- 135
 
+--task 7
+-- Да се дефинират функции, които намират факториел и двоен факториел от подадено 
+-- като параметър естествено число.
 fact :: Int -> Int
 fact 0 = 1
 fact 1 = 1
@@ -126,6 +153,8 @@ doubleFact n = n * doubleFact (n-2)
 -- 48
 
 --task 8
+-- Да се дефинират функции, които намират най-големия общ делител и най-малкото 
+-- общо кратно на две естествени числа.
 
 gcd' :: Int -> Int ->Int
 gcd' a b 
@@ -143,6 +172,9 @@ lcm' x y = div (x*y) (gcd' x y )
 -- 48
 
 --task 9 
+-- Да се дефинира функция, която проверява дали две цели числа са взаимно прости. 
+-- Чрез нея да се дефинира функцията на Ойлер, която приема естествено число n и 
+-- пресмята броя взаимно прости с n числа в интервала [1,n−1].
 
 coprime :: Int -> Int -> Bool
 coprime x y 
@@ -164,6 +196,9 @@ totient  = helpe 1
 -- 6
 
 --task10
+-- Да се напише функция, която приема положително четно число, по-голямо от 2, и 
+-- връща двойка прости числа, чиято сума е равна на даденото число.
+
 prime :: Int -> Bool
 prime n 
     | n< 2 =False
