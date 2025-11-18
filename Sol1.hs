@@ -109,7 +109,7 @@ exp x y
     | y==0 =1
     | otherwise = mult x (exp x (pred y))
     
--- >>> exp 2 12
+-- >>> exp 2 6
 -- ProgressCancelledException
 
 --task 5

@@ -1,8 +1,6 @@
 
 module Sol3 where
 import Prelude hiding(repeat,Ordering, Maybe, Nothing, Just)
-import Language.Haskell.Extension (KnownExtension(RequiredTypeArguments))
-
 --task 1
 -- Да се дефинира функция, която приема елемент от произволен тип и връща безкраен списък, 
 --съдържащ този елемент:
